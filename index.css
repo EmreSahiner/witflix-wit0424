@@ -1,7 +1,12 @@
+html {
+    scrollbar-color: red yellow;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
+   
 }
 
 h1 {
@@ -59,17 +64,17 @@ input[name="search"] {
 }
 
 /* main section */
-main,section {
+main,section, footer {
     padding: 1rem;
 }
 
 .hero-video {
     background: gray;
-    /* background: url("https://picsum.photos/500");
-    background-size: cover; */
+/*     background-image: url("https://i.pinimg.com/474x/32/e9/fa/32e9fada7a8163d976b07181e4f5000f.jpg");
+ */    background-size: cover; 
     color: white;
     padding: 2rem;
-    aspect-ratio: 7/5;
+    aspect-ratio: 16/9;
     display: flex;
     align-items: flex-end;
 }
@@ -145,7 +150,11 @@ main,section {
 .suggestion-container {
     display: flex;
     justify-content: space-between;
+    overflow: auto;
+    column-gap: 0.3rem;
+    scrollbar-color: red yellow;
 }
+
 
 .suggestion-card {
     display: inline-block;
@@ -154,6 +163,9 @@ main,section {
     background: gray;
     color: white;
     width: 30%;
+    aspect-ratio: 3/2;
+    max-width: 200px;
+    min-width: 200px;
 }
 
 .suggestion-card .rating {
@@ -170,4 +182,54 @@ main,section {
 
 .suggestion-card:nth-child(3) {
     background: green;;
+}
+
+/* footer */
+footer {
+    display: flex;
+    gap: 2rem
+}
+
+.footer-nav {
+    flex: 1;
+}
+
+
+footer h4 {
+    margin: 0 0.45em 0.6em;
+}
+
+footer nav {
+    display: flex;
+    gap: 1rem
+}
+
+footer img {
+    height: 3em;
+}
+
+
+@media (max-width: 992px) {
+    header {
+        flex-wrap: wrap;
+    }
+    header nav {
+        order: 1;
+        justify-content: center;
+        gap: 2rem;
+        display: flex;
+        width: 100%;
+    }
+
+    footer {
+        flex-direction: column-reverse;
+        row-gap: 1rem;
+    }
+
+    .footer-nav {
+        width: 100%;
+        flex: initial;
+    }
+
+
 }
